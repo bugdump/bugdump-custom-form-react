@@ -1,0 +1,157 @@
+:root {
+  --text: #1f1d24;
+  --muted: #6b6375;
+  --bg: #ffffff;
+  --surface: #f6f5f8;
+  --border: #dedce3;
+  --accent: #e5484d;
+  --accent-text: #ffffff;
+  --error: #c62a2f;
+
+  color-scheme: light dark;
+  font: 16px/1.5 system-ui, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #eeecf2;
+    --muted: #a19bab;
+    --bg: #131217;
+    --surface: #1d1b22;
+    --border: #34313c;
+    --error: #ff8589;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 64px 16px;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+p {
+  color: var(--muted);
+}
+
+code {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.9em;
+  color: var(--text);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.button {
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button-primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.error {
+  color: var(--error);
+}
+
+.report-dialog {
+  width: min(520px, calc(100% - 32px));
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.report-dialog::backdrop {
+  background: rgb(0 0 0 / 0.45);
+}
+
+.report-dialog h2 {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+}
+
+.report-dialog form {
+  display: grid;
+  gap: 16px;
+}
+
+.report-dialog label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.report-dialog input,
+.report-dialog textarea,
+.report-dialog select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-weight: 400;
+}
+
+.report-dialog textarea {
+  resize: vertical;
+}
+
+.report-dialog .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.report-dialog .actions {
+  justify-content: flex-end;
+  margin-top: 0;
+}
+
+.report-sent p {
+  color: var(--text);
+}
+
+@media (max-width: 480px) {
+  .report-dialog .row {
+    grid-template-columns: 1fr;
+  }
+}
