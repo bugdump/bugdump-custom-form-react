@@ -35,7 +35,7 @@ The SDK still attaches everything the widget would: console logs, network reques
   });
   ```
 
-Only `description` is required. `priority` must be one of your project's priority labels; `Low`, `Medium`, `High` and `Critical` are the defaults. `submit()` rejects with a `BugdumpApiError` when Bugdump refuses the report, for example over a rate limit.
+Every option of `submit()` is optional. This form requires a description with the textarea's `required` attribute; remove it to accept reports with no text. `priority` must be one of your project's priority labels; `Low`, `Medium`, `High` and `Critical` are the defaults. `submit()` rejects with a `BugdumpApiError` when Bugdump refuses the report, for example over a rate limit.
 
 The same call works in Angular, Vue or plain JavaScript. See [Sending reports from your own form](https://bugdump.com/help/widget-and-sdk/sending-reports-from-your-own-form) in the Bugdump help center.
 

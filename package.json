@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@bugdump/sdk": "^0.0.40",
+    "@bugdump/sdk": "^0.0.50",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
